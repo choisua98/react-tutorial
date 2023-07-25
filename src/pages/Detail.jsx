@@ -1,10 +1,13 @@
 import React from "react";
 import Header from "../common/Header";
 import Container from "../common/Container";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-export default function Detail() {
+export default function Detail(props) {
   const navigate = useNavigate();
+  const { id } = useParams();
+  console.log(props.posts);
+  console.log(props.posts.id); //??????
   return (
     <>
       <Header />
@@ -16,7 +19,7 @@ export default function Detail() {
             padding: "12px",
           }}
         >
-          제목
+          {/* {data[id].title} */}
         </h1>
         <div
           style={{

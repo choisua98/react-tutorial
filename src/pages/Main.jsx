@@ -1,10 +1,8 @@
-import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../common/Header";
 import Container from "../common/Container";
-import uuid from "react-uuid";
 
-export default function Main() {
+export default function Main({ posts }) {
   const navigate = useNavigate();
   return (
     <>
