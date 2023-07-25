@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../common/Header";
 import Container from "../common/Container";
 
+// posts 받아오기
 export default function Main({ posts }) {
   const navigate = useNavigate();
   return (

@@ -3,13 +3,14 @@ import Header from "../common/Header";
 import Container from "../common/Container";
 import { useNavigate, useParams } from "react-router-dom";
 
+// posts 받아오기
 export default function Detail({ posts }) {
   const navigate = useNavigate();
   const { id } = useParams();
-  const selectedPost = posts.find((post) => post.id === id); // 해당 ID와 일치하는 게시물 찾기
-  console.log(selectedPost);
-  // console.log(props.posts);
-  // console.log(props.posts.id); //??????
+  const selectedPost = posts.find((post) => post.id === id);
+  // 해당 id와 일치하는 게시물 찾기
+  // console.log(selectedPost);
+
   return (
     <>
       <Header />

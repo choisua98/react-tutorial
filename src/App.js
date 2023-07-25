@@ -26,13 +26,20 @@ function App() {
       author: "3작성자입니다.",
     },
   ]);
+  // 게시물을 추가하는 함수 생성
+  const addPost = (newPost) => {
+    setPosts([...posts, newPost]);
+  };
+
   return (
     // 페이지 이동에 사용되는 Route 태그를 위해선 Routes로 먼저 감싸야 한다.
     <Routes>
       {/* path="/"이기 때문에 '<주소>/'인 주소로 접속할 경우 Main 컴포넌트가 화면에 보여지게 된다.  */}
       <Route path="/" element={<Main posts={posts} />} />
+      {/* posts를 props로 Main과 Detail컴포넌트에 전달 */}
       <Route path="/detail/:id" element={<Detail posts={posts} />} />
-      <Route path="/create" element={<Create />} />
+      <Route path="/create" element={<Create addPost={addPost} />} />
+      {/* addPost함수를 props로 Create 컴포넌트에 전달 */}
       <Route path="/edit" element={<>수정페이지</>} />
       <Route path="/signup" element={<>회원가입페이지</>} />
       <Route path="/login" element={<>로그인페이지</>} />
