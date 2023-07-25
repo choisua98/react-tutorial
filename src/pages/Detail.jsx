@@ -3,11 +3,13 @@ import Header from "../common/Header";
 import Container from "../common/Container";
 import { useNavigate, useParams } from "react-router-dom";
 
-export default function Detail(props) {
+export default function Detail({ posts }) {
   const navigate = useNavigate();
   const { id } = useParams();
-  console.log(props.posts);
-  console.log(props.posts.id); //??????
+  const selectedPost = posts.find((post) => post.id === id); // 해당 ID와 일치하는 게시물 찾기
+  console.log(selectedPost);
+  // console.log(props.posts);
+  // console.log(props.posts.id); //??????
   return (
     <>
       <Header />
@@ -19,6 +21,7 @@ export default function Detail(props) {
             padding: "12px",
           }}
         >
+          제목: {selectedPost.title}
           {/* {data[id].title} */}
         </h1>
         <div
@@ -29,7 +32,7 @@ export default function Detail(props) {
             padding: "12px",
           }}
         >
-          내용
+          내용: {selectedPost.content}
         </div>
         <div
           style={{
