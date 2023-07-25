@@ -4,6 +4,7 @@ import Header from "../common/Header";
 import Container from "../common/Container";
 
 export default function Create() {
+  const onAddButtonClickHandler = () => {};
   return (
     <>
       <Header />
@@ -39,6 +40,7 @@ export default function Create() {
               height: "400px",
             }}
           >
+            {/* 내용 */}
             <textarea
               placeholder="내용"
               style={{
@@ -54,6 +56,7 @@ export default function Create() {
             />
           </div>
           <button
+            onClick={onAddButtonClickHandler}
             style={{
               width: "100%",
               height: "40px",
